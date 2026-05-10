@@ -3,3 +3,4 @@
 
 ## Setup
 A projekt használatához szükség van a pyproject.toml fájlban megadott könyvtárak telepítésére
+
