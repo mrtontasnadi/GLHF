@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-05-16T21:09:48Z",
+  "run_dir": "C:\\BME\\MSC\\4. f\u00e9l\u00e9v\\GL\\GLHF\\runs\\yolo26s_cls_roboflow\\train_20260516_224211",
+  "train_result": {
+    "metrics/accuracy_top1": 0.0016207455191761255,
+    "metrics/accuracy_top5": 0.132901132106781,
+    "fitness": 0.06726093881297857
+  },
+  "val_result": {
+    "metrics/accuracy_top1": 0.0016207455191761255,
+    "metrics/accuracy_top5": 0.13371150195598602,
+    "fitness": 0.06766612373758107
+  },
+  "best_checkpoint": "C:\\BME\\MSC\\4. f\u00e9l\u00e9v\\GL\\GLHF\\runs\\yolo26s_cls_roboflow\\train_20260516_224211\\weights\\best.pt",
+  "last_checkpoint": "C:\\BME\\MSC\\4. f\u00e9l\u00e9v\\GL\\GLHF\\runs\\yolo26s_cls_roboflow\\train_20260516_224211\\weights\\last.pt"
+}
