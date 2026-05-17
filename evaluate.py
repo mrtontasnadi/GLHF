@@ -51,7 +51,8 @@ def load_ground_truth(gt_dir: Path) -> dict[str, list[dict]]:
     gt: dict[str, list[dict]] = {}
     for json_path in sorted(gt_dir.glob('*.json')):
         data = json.loads(json_path.read_text(encoding='utf-8'))
-        gt[json_path.stem] = [
+        key = gt_stem(json_path.stem)  # normalise so both GT and preds use the same key
+        gt[key] = [
             {'reduced_label': reduce_label(obj['label']), 'bbox': obj['bbox']}
             for obj in data.get('objects', [])
         ]
