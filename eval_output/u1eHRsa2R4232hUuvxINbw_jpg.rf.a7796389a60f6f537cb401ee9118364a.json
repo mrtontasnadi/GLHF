@@ -1,0 +1,44 @@
+{
+  "objects": [
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.97067,
+      "bbox": {
+        "xmin": 412.3866271972656,
+        "ymin": 388.7678527832031,
+        "xmax": 424.2015380859375,
+        "ymax": 410.6259460449219
+      }
+    },
+    {
+      "reduced_label": "priority road",
+      "confidence": 0.834699,
+      "bbox": {
+        "xmin": 409.4808044433594,
+        "ymin": 339.9471435546875,
+        "xmax": 426.86651611328125,
+        "ymax": 368.74822998046875
+      }
+    },
+    {
+      "reduced_label": "complementary",
+      "confidence": 0.564533,
+      "bbox": {
+        "xmin": 411.8385009765625,
+        "ymin": 369.7970886230469,
+        "xmax": 424.1029052734375,
+        "ymax": 389.0130310058594
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.321586,
+      "bbox": {
+        "xmin": 457.6353759765625,
+        "ymin": 401.73956298828125,
+        "xmax": 477.1551513671875,
+        "ymax": 408.8311462402344
+      }
+    }
+  ]
+}

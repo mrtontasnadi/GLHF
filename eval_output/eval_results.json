@@ -1,0 +1,78 @@
+{
+  "quality": {
+    "Warning": {
+      "n_gt": 385,
+      "tp": 0,
+      "fp": 19,
+      "fn": 385,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "regulatory-blue": {
+      "n_gt": 347,
+      "tp": 0,
+      "fp": 5,
+      "fn": 347,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "regulatory-red": {
+      "n_gt": 905,
+      "tp": 0,
+      "fp": 28,
+      "fn": 905,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "complementary": {
+      "n_gt": 213,
+      "tp": 0,
+      "fp": 3,
+      "fn": 213,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "priority road": {
+      "n_gt": 83,
+      "tp": 0,
+      "fp": 5,
+      "fn": 83,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "other-sign": {
+      "n_gt": 4174,
+      "tp": 0,
+      "fp": 220,
+      "fn": 4174,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap": 0.0099
+    },
+    "mAP": 0.0099
+  },
+  "runtime": {
+    "n_images": 109,
+    "total_time_s": 3.59,
+    "throughput_img_per_s": 30.4,
+    "mean_total_ms": 32.9,
+    "std_total_ms": 73.75,
+    "min_total_ms": 12.69,
+    "max_total_ms": 783.44,
+    "mean_detector_ms": 19.63,
+    "mean_classifier_ms": 13.27,
+    "mean_detections_per_image": 2.57,
+    "gpu_peak_memory_mb": 150.5
+  }
+}

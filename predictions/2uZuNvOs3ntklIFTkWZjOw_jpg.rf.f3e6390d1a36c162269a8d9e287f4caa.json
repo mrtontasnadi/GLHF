@@ -1,0 +1,24 @@
+{
+  "objects": [
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.916673,
+      "bbox": {
+        "xmin": 327.16015625,
+        "ymin": 349.77984619140625,
+        "xmax": 336.2264404296875,
+        "ymax": 362.2643737792969
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.827555,
+      "bbox": {
+        "xmin": 254.30419921875,
+        "ymin": 230.74005126953125,
+        "xmax": 298.0310974121094,
+        "ymax": 280.9228210449219
+      }
+    }
+  ]
+}

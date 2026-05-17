@@ -1,0 +1,14 @@
+{
+  "objects": [
+    {
+      "reduced_label": "regulatory-blue",
+      "confidence": 0.509043,
+      "bbox": {
+        "xmin": 609.385986328125,
+        "ymin": 319.1892395019531,
+        "xmax": 620.0245971679688,
+        "ymax": 335.04541015625
+      }
+    }
+  ]
+}

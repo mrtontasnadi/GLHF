@@ -1,0 +1,54 @@
+{
+  "objects": [
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.54869,
+      "bbox": {
+        "xmin": 306.2890625,
+        "ymin": 371.2585144042969,
+        "xmax": 313.4145812988281,
+        "ymax": 382.848388671875
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.334091,
+      "bbox": {
+        "xmin": 351.2831726074219,
+        "ymin": 371.35772705078125,
+        "xmax": 371.0940246582031,
+        "ymax": 401.7567443847656
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.287253,
+      "bbox": {
+        "xmin": 306.2890625,
+        "ymin": 371.2585144042969,
+        "xmax": 313.4145812988281,
+        "ymax": 382.848388671875
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.28012,
+      "bbox": {
+        "xmin": 376.8986511230469,
+        "ymin": 297.5622253417969,
+        "xmax": 390.3818664550781,
+        "ymax": 309.6518859863281
+      }
+    },
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.277093,
+      "bbox": {
+        "xmin": 370.96966552734375,
+        "ymin": 243.07186889648438,
+        "xmax": 395.05279541015625,
+        "ymax": 272.3006896972656
+      }
+    }
+  ]
+}

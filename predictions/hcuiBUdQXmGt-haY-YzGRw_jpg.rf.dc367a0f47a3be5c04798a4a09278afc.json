@@ -1,0 +1,34 @@
+{
+  "objects": [
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.908939,
+      "bbox": {
+        "xmin": 55.694820404052734,
+        "ymin": 282.27935791015625,
+        "xmax": 76.20410919189453,
+        "ymax": 320.18621826171875
+      }
+    },
+    {
+      "reduced_label": "regulatory-blue",
+      "confidence": 0.532788,
+      "bbox": {
+        "xmin": 484.9373474121094,
+        "ymin": 264.2293701171875,
+        "xmax": 514.2586059570312,
+        "ymax": 301.7793273925781
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.388526,
+      "bbox": {
+        "xmin": 432.4801330566406,
+        "ymin": 361.296142578125,
+        "xmax": 440.4737243652344,
+        "ymax": 371.7005920410156
+      }
+    }
+  ]
+}

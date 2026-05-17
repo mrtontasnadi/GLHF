@@ -1,0 +1,74 @@
+{
+  "objects": [
+    {
+      "reduced_label": "complementary",
+      "confidence": 0.926831,
+      "bbox": {
+        "xmin": 581.52734375,
+        "ymin": 276.51702880859375,
+        "xmax": 613.3892822265625,
+        "ymax": 319.6370544433594
+      }
+    },
+    {
+      "reduced_label": "priority road",
+      "confidence": 0.833607,
+      "bbox": {
+        "xmin": 400.6442565917969,
+        "ymin": 335.1400146484375,
+        "xmax": 419.97967529296875,
+        "ymax": 361.5113220214844
+      }
+    },
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.832398,
+      "bbox": {
+        "xmin": 569.3260498046875,
+        "ymin": 223.20840454101562,
+        "xmax": 605.8124389648438,
+        "ymax": 276.44390869140625
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.589201,
+      "bbox": {
+        "xmin": 404.85235595703125,
+        "ymin": 361.2178039550781,
+        "xmax": 419.8156433105469,
+        "ymax": 380.0975341796875
+      }
+    },
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.572033,
+      "bbox": {
+        "xmin": 558.0860595703125,
+        "ymin": 175.56387329101562,
+        "xmax": 593.8937377929688,
+        "ymax": 223.69992065429688
+      }
+    },
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.46144,
+      "bbox": {
+        "xmin": 569.3260498046875,
+        "ymin": 223.20840454101562,
+        "xmax": 605.8124389648438,
+        "ymax": 276.44390869140625
+      }
+    },
+    {
+      "reduced_label": "priority road",
+      "confidence": 0.293117,
+      "bbox": {
+        "xmin": 400.6442565917969,
+        "ymin": 335.1400146484375,
+        "xmax": 419.97967529296875,
+        "ymax": 361.5113220214844
+      }
+    }
+  ]
+}

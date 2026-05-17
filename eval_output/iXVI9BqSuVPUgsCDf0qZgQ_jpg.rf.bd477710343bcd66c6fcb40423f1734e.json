@@ -1,0 +1,214 @@
+{
+  "objects": [
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.742327,
+      "bbox": {
+        "xmin": 505.6255798339844,
+        "ymin": 145.38775634765625,
+        "xmax": 601.5799560546875,
+        "ymax": 237.39535522460938
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.71112,
+      "bbox": {
+        "xmin": 553.4424438476562,
+        "ymin": 0.0,
+        "xmax": 589.2186889648438,
+        "ymax": 45.7968635559082
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.631953,
+      "bbox": {
+        "xmin": 330.681884765625,
+        "ymin": 278.1665954589844,
+        "xmax": 343.2634582519531,
+        "ymax": 297.3695068359375
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.554906,
+      "bbox": {
+        "xmin": 565.1475830078125,
+        "ymin": 96.87994384765625,
+        "xmax": 583.0496215820312,
+        "ymax": 128.7358856201172
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.553904,
+      "bbox": {
+        "xmin": 501.3342590332031,
+        "ymin": 0.0,
+        "xmax": 562.7071533203125,
+        "ymax": 172.6361846923828
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.551823,
+      "bbox": {
+        "xmin": 599.0119018554688,
+        "ymin": 0.9019508361816406,
+        "xmax": 612.7893676757812,
+        "ymax": 24.591150283813477
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.487859,
+      "bbox": {
+        "xmin": 511.2774353027344,
+        "ymin": 116.78073120117188,
+        "xmax": 529.9987182617188,
+        "ymax": 151.2872314453125
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.427927,
+      "bbox": {
+        "xmin": 513.5343627929688,
+        "ymin": 156.8553009033203,
+        "xmax": 529.9346313476562,
+        "ymax": 190.03292846679688
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.41596,
+      "bbox": {
+        "xmin": 566.0745239257812,
+        "ymin": 153.68011474609375,
+        "xmax": 583.9578857421875,
+        "ymax": 186.18858337402344
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.398824,
+      "bbox": {
+        "xmin": 567.7617797851562,
+        "ymin": 195.89340209960938,
+        "xmax": 584.8660888671875,
+        "ymax": 226.4305877685547
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.364585,
+      "bbox": {
+        "xmin": 536.521728515625,
+        "ymin": 119.01116180419922,
+        "xmax": 552.9716796875,
+        "ymax": 145.90089416503906
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.346375,
+      "bbox": {
+        "xmin": 507.31365966796875,
+        "ymin": 78.2431640625,
+        "xmax": 548.3931884765625,
+        "ymax": 111.87586975097656
+      }
+    },
+    {
+      "reduced_label": "regulatory-red",
+      "confidence": 0.339674,
+      "bbox": {
+        "xmin": 563.5479736328125,
+        "ymin": 40.55583953857422,
+        "xmax": 581.4150390625,
+        "ymax": 72.76394653320312
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.334561,
+      "bbox": {
+        "xmin": 512.6587524414062,
+        "ymin": 197.70773315429688,
+        "xmax": 530.1171875,
+        "ymax": 236.09130859375
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.325748,
+      "bbox": {
+        "xmin": 535.399658203125,
+        "ymin": 82.36385345458984,
+        "xmax": 553.4130859375,
+        "ymax": 105.85913848876953
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.32163,
+      "bbox": {
+        "xmin": 551.3101806640625,
+        "ymin": 0.0,
+        "xmax": 640.0,
+        "ymax": 63.4472541809082
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.31224,
+      "bbox": {
+        "xmin": 512.0912475585938,
+        "ymin": 113.86416625976562,
+        "xmax": 557.494384765625,
+        "ymax": 151.69447326660156
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.304185,
+      "bbox": {
+        "xmin": 566.0745239257812,
+        "ymin": 153.68011474609375,
+        "xmax": 583.9578857421875,
+        "ymax": 186.18858337402344
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.2991,
+      "bbox": {
+        "xmin": 505.826171875,
+        "ymin": 75.82965087890625,
+        "xmax": 557.7013549804688,
+        "ymax": 115.5482406616211
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.278243,
+      "bbox": {
+        "xmin": 608.62939453125,
+        "ymin": 132.3185272216797,
+        "xmax": 624.7384033203125,
+        "ymax": 163.7198028564453
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.2526,
+      "bbox": {
+        "xmin": 567.7617797851562,
+        "ymin": 195.89340209960938,
+        "xmax": 584.8660888671875,
+        "ymax": 226.4305877685547
+      }
+    }
+  ]
+}
