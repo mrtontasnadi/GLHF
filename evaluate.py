@@ -87,6 +87,14 @@ def compute_ap(recalls: list[float], precisions: list[float]) -> float:
 
 # ── Quality evaluation ────────────────────────────────────────────────────────
 
+def pred_confidence(pred: dict) -> float:
+    """Backward-compatible confidence for ranking predictions."""
+    if 'detector_confidence' in pred:
+        return float(pred['detector_confidence'])
+    if 'confidence' in pred:
+        return float(pred['confidence'])
+    return 0.0
+
 REDUCED_LABELS = [
     'Warning', 'regulatory-blue', 'regulatory-red',
     'complementary', 'priority road', 'other-sign',
@@ -109,13 +117,14 @@ def evaluate_quality(
     class_n_gt:  dict[str, int] = defaultdict(int)
 
     for stem in set(all_preds) | set(all_gts):
-        preds = sorted(all_preds.get(stem, []), key=lambda x: x['confidence'], reverse=True)
+        preds = sorted(all_preds.get(stem, []), key=pred_confidence, reverse=True)
         gts   = all_gts.get(stem, [])
         matched_gt: set[int] = set()
 
         for pred in preds:
             cls = pred['reduced_label']
             best_iou, best_j = 0.0, -1
+            c = pred_confidence(pred)
             for j, gt in enumerate(gts):
                 if gt['reduced_label'] != cls or j in matched_gt:
                     continue
@@ -124,9 +133,9 @@ def evaluate_quality(
                     best_iou, best_j = v, j
             if best_iou >= iou_thresh:
                 matched_gt.add(best_j)
-                class_dets[cls].append((pred['confidence'], True))
+                class_dets[cls].append((c, True))
             else:
-                class_dets[cls].append((pred['confidence'], False))
+                class_dets[cls].append((c, False))
 
         for gt in gts:
             class_n_gt[gt['reduced_label']] += 1
@@ -191,7 +200,7 @@ def predict_image_timed(
 
     for box in det_results.boxes:
         x1, y1, x2, y2 = box.xyxy[0].tolist()
-        confidence = float(box.conf[0])
+        det_conf = float(box.conf[0])
 
         cx1, cy1 = max(0, int(x1)), max(0, int(y1))
         cx2, cy2 = min(w, int(x2)), min(h, int(y2))
@@ -199,14 +208,30 @@ def predict_image_timed(
         if crop.size == 0:
             continue
 
+        det_cls_idx = int(box.cls[0]) if box.cls is not None else -1
+        det_label_raw = det_results.names.get(det_cls_idx, 'other-sign') if det_cls_idx >= 0 else 'other-sign'
+        det_label_reduced = reduce_label(det_label_raw)
+
         t1 = time.perf_counter()
         cls_result = classifier(crop, verbose=False)[0]
         t_cls += (time.perf_counter() - t1) * 1000
 
-        fine_label = cls_result.names[int(cls_result.probs.top1)]
+        if cls_result.probs is None or cls_result.probs.top1 is None:
+            continue
+
+        cls_top1_idx = int(cls_result.probs.top1)
+        cls_conf = float(cls_result.probs.top1conf) if cls_result.probs.top1conf is not None else None
+        if cls_conf is None:
+            continue
+
+        cls_label_raw = cls_result.names.get(cls_top1_idx, 'other-sign')
+        cls_label_reduced = reduce_label(cls_label_raw)
+
         objects.append({
-            'reduced_label': reduce_label(fine_label),
-            'confidence':    round(confidence, 6),
+            'reduced_label': cls_label_reduced,
+            'detector_confidence': round(det_conf, 6),
+            'classifier_confidence': round(cls_conf, 6),
+            'classifier_action': 'confirmed' if cls_label_reduced == det_label_reduced else 'overwrote',
             'bbox': {'xmin': x1, 'ymin': y1, 'xmax': x2, 'ymax': y2},
         })
 

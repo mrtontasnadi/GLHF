@@ -73,6 +73,8 @@ def predict_image(
     detector: YOLO,
     classifier: YOLO,
     conf_threshold: float,
+    cls_low_max: float,
+    cls_conf_min: float,
 ) -> list[dict]:
     img = cv2.imread(str(img_path))
     if img is None:
@@ -84,21 +86,51 @@ def predict_image(
     objects = []
     for box in det_results.boxes:
         x1, y1, x2, y2 = box.xyxy[0].tolist()
-        confidence = float(box.conf[0])
+        det_conf = float(box.conf[0])
 
-        # Crop with boundary clamping
-        cx1, cy1 = max(0, int(x1)), max(0, int(y1))
-        cx2, cy2 = min(w, int(x2)), min(h, int(y2))
-        crop = img[cy1:cy2, cx1:cx2]
-        if crop.size == 0:
-            continue
+        # Original detector class (used for confirmation/overwrite tracking)
+        det_cls_idx = int(box.cls[0]) if box.cls is not None else -1
+        det_label_raw = det_results.names.get(det_cls_idx, 'other-sign') if det_cls_idx >= 0 else 'other-sign'
+        det_label_reduced = reduce_label(det_label_raw)
 
-        cls_result = classifier(crop, verbose=False)[0]
-        fine_label = cls_result.names[int(cls_result.probs.top1)]
+        # Defaults if classifier is skipped
+        final_label = det_label_reduced
+        cls_conf = None
+        classifier_action = 'skipped'
+
+        # Only classify if detector confidence is above threshold but still "low"
+        if conf_threshold <= det_conf < cls_low_max:
+            # Crop with boundary clamping
+            cx1, cy1 = max(0, int(x1)), max(0, int(y1))
+            cx2, cy2 = min(w, int(x2)), min(h, int(y2))
+            crop = img[cy1:cy2, cx1:cx2]
+            if crop.size == 0:
+                # Invalid crop => cannot classify => drop detection
+                continue
+
+            cls_result = classifier(crop, verbose=False)[0]
+
+            # If classifier has no usable probabilities/classes, drop detection
+            if cls_result.probs is None or cls_result.probs.top1 is None:
+                continue
+
+            cls_top1_idx = int(cls_result.probs.top1)
+            cls_conf = float(cls_result.probs.top1conf) if cls_result.probs.top1conf is not None else None
+            if cls_conf is None or cls_conf < cls_conf_min:
+                # Classifier did not return a strong enough class => drop detection
+                continue
+
+            cls_label_raw = cls_result.names.get(cls_top1_idx, 'other-sign')
+            cls_label_reduced = reduce_label(cls_label_raw)
+            final_label = cls_label_reduced
+
+            classifier_action = 'confirmed' if cls_label_reduced == det_label_reduced else 'overwrote'
 
         objects.append({
-            'reduced_label': reduce_label(fine_label),
-            'confidence': round(confidence, 6),
+            'reduced_label': final_label,
+            'detector_confidence': round(det_conf, 6),
+            'classifier_confidence': round(cls_conf, 6) if cls_conf is not None else None,
+            'classifier_action': classifier_action,  # 'skipped' | 'confirmed' | 'overwrote'
             'bbox': {'xmin': x1, 'ymin': y1, 'xmax': x2, 'ymax': y2},
         })
 
@@ -111,6 +143,8 @@ def run(
     detector_path: Path,
     classifier_path: Path,
     conf: float,
+    cls_low_max: float,
+    cls_conf_min: float,
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -124,7 +158,7 @@ def run(
 
     print(f'Processing {len(image_paths)} images...')
     for img_path in image_paths:
-        objects = predict_image(img_path, detector, classifier, conf)
+        objects = predict_image(img_path, detector, classifier, conf, cls_low_max, cls_conf_min)
         out_path = output_dir / (img_path.stem + '.json')
         out_path.write_text(json.dumps({'objects': objects}, indent=2), encoding='utf-8')
         print(f'  {img_path.name} → {len(objects)} detection(s)')
@@ -141,10 +175,29 @@ def main() -> None:
     parser.add_argument('--detector',   required=True, type=Path, help='Detector weights (.pt)')
     parser.add_argument('--classifier', required=True, type=Path, help='Classifier weights (.pt)')
     parser.add_argument('--conf', type=float, default=0.25, help='Detector confidence threshold (default: 0.25)')
+    parser.add_argument(
+        '--cls-low-max',
+        type=float,
+        default=0.60,
+        help='Run classifier only for detections with conf in [--conf, --cls-low-max) (default: 0.60)',
+    )
+    parser.add_argument(
+        '--cls-conf-min',
+        type=float,
+        default=0.0,
+        help='Minimum classifier top1 confidence required to keep a low-confidence detection (default: 0.0)',
+    )
     args = parser.parse_args()
 
-    run(args.images, args.output, args.detector, args.classifier, args.conf)
-
+    run(
+        args.images,
+        args.output,
+        args.detector,
+        args.classifier,
+        args.conf,
+        args.cls_low_max,
+        args.cls_conf_min,
+    )
 
 if __name__ == '__main__':
     main()
