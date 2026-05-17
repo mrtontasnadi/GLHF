@@ -3,7 +3,8 @@
     "allow": [
       "Bash(Get-ChildItem -Path \"c:\\\\BME\\\\MSC\\\\4. félév\\\\GL\\\\GLHF\" -Recurse -Force)",
       "Bash(Select-Object -Property FullName)",
-      "Bash(ConvertTo-Json)"
+      "Bash(ConvertTo-Json)",
+      "Bash(python -c ' *)"
     ]
   }
 }

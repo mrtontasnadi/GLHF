@@ -1,34 +1,3 @@
 {
-  "objects": [
-    {
-      "reduced_label": "other-sign",
-      "confidence": 0.535252,
-      "bbox": {
-        "xmin": 625.5933837890625,
-        "ymin": 196.93272399902344,
-        "xmax": 640.0,
-        "ymax": 214.1299591064453
-      }
-    },
-    {
-      "reduced_label": "other-sign",
-      "confidence": 0.5108,
-      "bbox": {
-        "xmin": 625.5933837890625,
-        "ymin": 196.93272399902344,
-        "xmax": 640.0,
-        "ymax": 214.1299591064453
-      }
-    },
-    {
-      "reduced_label": "Warning",
-      "confidence": 0.293951,
-      "bbox": {
-        "xmin": 620.8375854492188,
-        "ymin": 159.02392578125,
-        "xmax": 640.0,
-        "ymax": 200.0685272216797
-      }
-    }
-  ]
+  "objects": []
 }

@@ -1,14 +1,3 @@
 {
-  "objects": [
-    {
-      "reduced_label": "other-sign",
-      "confidence": 0.280774,
-      "bbox": {
-        "xmin": 459.09063720703125,
-        "ymin": 508.2192077636719,
-        "xmax": 487.53656005859375,
-        "ymax": 546.282470703125
-      }
-    }
-  ]
+  "objects": []
 }

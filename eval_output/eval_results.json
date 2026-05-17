@@ -2,77 +2,77 @@
   "quality": {
     "Warning": {
       "n_gt": 44,
-      "tp": 13,
-      "fp": 6,
-      "fn": 31,
-      "precision": 0.6842,
-      "recall": 0.2955,
-      "f1": 0.4127,
-      "ap": 0.2785
+      "tp": 9,
+      "fp": 1,
+      "fn": 35,
+      "precision": 0.9,
+      "recall": 0.2045,
+      "f1": 0.3333,
+      "ap": 0.2079
     },
     "regulatory-blue": {
       "n_gt": 20,
       "tp": 2,
-      "fp": 3,
+      "fp": 2,
       "fn": 18,
-      "precision": 0.4,
+      "precision": 0.5,
       "recall": 0.1,
-      "f1": 0.16,
-      "ap": 0.0594
+      "f1": 0.1667,
+      "ap": 0.0842
     },
     "regulatory-red": {
       "n_gt": 101,
-      "tp": 22,
-      "fp": 6,
-      "fn": 79,
-      "precision": 0.7857,
-      "recall": 0.2178,
-      "f1": 0.3411,
-      "ap": 0.2055
+      "tp": 20,
+      "fp": 1,
+      "fn": 81,
+      "precision": 0.9524,
+      "recall": 0.198,
+      "f1": 0.3279,
+      "ap": 0.1957
     },
     "complementary": {
       "n_gt": 17,
-      "tp": 3,
-      "fp": 0,
-      "fn": 14,
-      "precision": 1.0,
-      "recall": 0.1765,
-      "f1": 0.3,
-      "ap": 0.1782
+      "tp": 4,
+      "fp": 2,
+      "fn": 13,
+      "precision": 0.6667,
+      "recall": 0.2353,
+      "f1": 0.3478,
+      "ap": 0.2139
     },
     "priority road": {
       "n_gt": 7,
       "tp": 1,
-      "fp": 4,
+      "fp": 3,
       "fn": 6,
-      "precision": 0.2,
+      "precision": 0.25,
       "recall": 0.1429,
-      "f1": 0.1667,
-      "ap": 0.0561
+      "f1": 0.1818,
+      "ap": 0.0792
     },
     "other-sign": {
       "n_gt": 359,
-      "tp": 94,
-      "fp": 126,
-      "fn": 265,
-      "precision": 0.4273,
-      "recall": 0.2618,
-      "f1": 0.3247,
-      "ap": 0.1894
+      "tp": 103,
+      "fp": 140,
+      "fn": 256,
+      "precision": 0.4239,
+      "recall": 0.2869,
+      "f1": 0.3422,
+      "ap": 0.1744
     },
-    "mAP": 0.1612
+    "mAP": 0.1592
   },
   "runtime": {
     "n_images": 109,
-    "total_time_s": 3.52,
-    "throughput_img_per_s": 30.99,
-    "mean_total_ms": 32.27,
-    "std_total_ms": 70.78,
-    "min_total_ms": 12.15,
-    "max_total_ms": 751.13,
-    "mean_detector_ms": 19.23,
-    "mean_classifier_ms": 13.04,
-    "mean_detections_per_image": 2.57,
-    "gpu_peak_memory_mb": 150.5
+    "total_time_s": 5.38,
+    "throughput_img_per_s": 20.25,
+    "mean_total_ms": 49.39,
+    "std_total_ms": 100.92,
+    "min_total_ms": 26.44,
+    "max_total_ms": 1090.94,
+    "mean_detector_ms": 35.44,
+    "mean_classifier_ms": 13.95,
+    "mean_detections_per_image": 2.64,
+    "gpu_peak_memory_mb": 310.6
   }
 }

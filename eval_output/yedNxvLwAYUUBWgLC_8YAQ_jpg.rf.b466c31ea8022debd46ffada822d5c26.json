@@ -1,13 +1,23 @@
 {
   "objects": [
     {
-      "reduced_label": "other-sign",
-      "confidence": 0.26447,
+      "reduced_label": "Warning",
+      "confidence": 0.764131,
       "bbox": {
-        "xmin": 280.8661193847656,
-        "ymin": 308.1451721191406,
-        "xmax": 293.9766540527344,
-        "ymax": 342.6936950683594
+        "xmin": 282.030517578125,
+        "ymin": 311.04638671875,
+        "xmax": 292.0326232910156,
+        "ymax": 327.7470703125
+      }
+    },
+    {
+      "reduced_label": "other-sign",
+      "confidence": 0.549987,
+      "bbox": {
+        "xmin": 279.9248046875,
+        "ymin": 309.4201354980469,
+        "xmax": 295.1012268066406,
+        "ymax": 341.0714111328125
       }
     }
   ]
